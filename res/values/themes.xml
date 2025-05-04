@@ -1,0 +1,7 @@
+<!-- res/values/themes.xml -->
+<resources>
+    <style name="Theme.MovuFit" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- your color, typography, etc. -->
+    </style>
+</resources>
+
