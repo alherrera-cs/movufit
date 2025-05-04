@@ -7,6 +7,10 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.example.movufit.databinding.FragmentLoginBinding
 import com.google.firebase.auth.FirebaseAuth
+import android.widget.Toast
+import androidx.navigation.fragment.findNavController
+import com.example.movufit.R
+
 
 class LoginFragment : Fragment() {
 
@@ -32,8 +36,13 @@ class LoginFragment : Fragment() {
             val email = binding.emailInput.text.toString()
             val password = binding.passwordInput.text.toString()
 
-            // TODO: Add validation and login logic
+            if (email.isNotEmpty() && password.isNotEmpty()) {
+                findNavController().navigate(R.id.action_loginFragment_to_dashboardFragment)
+            } else {
+                Toast.makeText(requireContext(), "Please enter both email and password", Toast.LENGTH_SHORT).show()
+            }
         }
+
     }
 
     override fun onDestroyView() {
